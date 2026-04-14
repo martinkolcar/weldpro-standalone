@@ -575,7 +575,7 @@ var jsPDF = window.jspdf.jsPDF;
   
   if (!session) {
     console.log('❌ Nie ste prihlásený! Presmerovanie na login...');
-    window.location.href = 'login.html';
+    // standalone - no login redirect
     return;
   }
   
@@ -637,7 +637,7 @@ var jsPDF = window.jspdf.jsPDF;
     console.error('❌ Neplatná session!', e);
     localStorage.removeItem('weldpro_session');
     sessionStorage.removeItem('weldpro_session');
-    window.location.href = 'login.html';
+    // standalone - no login redirect
   }
 })();
 
@@ -15053,7 +15053,7 @@ function logout() {
   if (confirm('Naozaj sa chcete odhlásiť?')) {
     localStorage.removeItem('weldpro_session');
     sessionStorage.removeItem('weldpro_session');
-    window.location.href = 'login.html';
+    // standalone - no login redirect
   }
 }
 
